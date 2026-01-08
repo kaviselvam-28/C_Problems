@@ -1,13 +1,18 @@
 #include<stdio.h>
 int main()
 {
-    int x,rev;
+    int x,temp,a=1,first,middle,last,result=0;
     printf("Enter the num :");
     scanf("%d",&x);
-    for(rev=0;x>0;)
+    last=x%10;
+    for(temp=x;temp>=10;temp+1)
     {
-        rev=(rev*10)+(x%10);
-        x=x/10;
+        temp=temp/10;
+        a=a*10;
     }
-    printf("%d",rev);
+    first=temp;
+    middle=(x%a)/10;
+    last=last*a;
+    result=last+(middle*10)+first;
+    printf("%d",result);
 }
